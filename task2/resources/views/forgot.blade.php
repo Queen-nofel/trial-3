@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+     @vite('resources/css/app.css')
+    
+</head>
+<body>
+     <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 col-lg-5">
+                <div class="card mt-5 p-4 shadow"> 
+                    <h1 class="text-center">DIT
+                    </h1>
+                    @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                    @endif
+
+                    @if(session('error'))
+                     <div class="alert alert-danger">
+                        {{session('error')}}
+                     </div>
+                     @endif
+                    <form method="POST" action="/forgot">
+                        @csrf
+                         <div class="mb-3">
+                            <label class="form-label">email</label>
+                            <input type="email"  name="email" class="form-control" placeholder="enter your email" required>
+                        </div>
+                     
+                         <div class="mb-3 row">
+                            <div class="col">
+                            <button class="rounded-pill btn btn-primary" type="submit"> send reset link</button>
+                            </div>
+                            
+                        
+                    
+
+                         
+                         </form>
+                       
+</body>
+</html>
